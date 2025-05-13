@@ -8,3 +8,10 @@ The text guest:guest@localhost:5672 gives login details and the server location 
 ### Simulation slow subscriber
 ![Alt text](img/image.png)
 The dashboard showed a peak of 16 messages in the queue. This happened because the publisher published faster than the subscriber could process. Messages accumulated until the subscriber caught up and consumed each one.
+
+### Reflection and Running at least three subscribers
+![Alt text](img/image2.png)
+
+#### Add some explanation/reflection of why it is like that
+
+The queue briefly peaked at 9 messages before dropping back to zero. The publisher pushed messages rapidly while three subscribers processed them in parallel. This parallel processing boosted throughput and cleared the backlog much faster than a single subscriber alone.
