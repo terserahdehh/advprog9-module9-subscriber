@@ -4,3 +4,7 @@ AMQP stands for Advanced Message Queuing Protocol. It’s a set of rules for sen
 #### 2. What does it mean? guest:guest@localhost:5672 , what is the first guest, and what is the second guest, and what is localhost:5672 is for? 
 
 The text guest:guest@localhost:5672 gives login details and the server location for an AMQP connection. The first guest is the username, and the second guest is the matching password. localhost means the server is running on the same machine as the application. The number 5672 is the default port where the AMQP service listens for connections. Altogether, this string tells the application how to reach the message broker and log in
+
+### Simulation slow subscriber
+![Alt text](img/image.png)
+The dashboard showed a peak of 16 messages in the queue. This happened because the publisher published faster than the subscriber could process. Messages accumulated until the subscriber caught up and consumed each one.
